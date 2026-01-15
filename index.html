@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DevAcademy Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">
+      <span class="logo-icon">▶</span>
+      <div>
+        <h2>DevAcademy</h2>
+        <p>Learning Portal</p>
+      </div>
+    </div>
+
+    <nav>
+      <a class="active">Dashboard</a>
+      <a>Curriculum</a>
+      <a>Projects</a>
+      <a>Assessments</a>
+    </nav>
+
+    <div class="sidebar-footer">
+      <a>Settings</a>
+      <a>Support</a>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Feedback -->
+    <section class="card">
+      <h3>📣 Feedback & Student Support</h3>
+
+      <div class="feedback-grid">
+        <div>
+          <label>Full Name</label>
+          <input placeholder="e.g. Alex Rivera">
+
+          <label>Email Address</label>
+          <input placeholder="alex@example.com">
+
+          <button onclick="sendMessage()">➤ Send Message</button>
+          <p id="successMsg" class="success"></p>
+        </div>
+
+        <div>
+          <label>Message / Question</label>
+          <textarea placeholder="How do I center a div using CSS Grid?"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Grid -->
+    <section class="bottom-grid">
+
+      <!-- Learning Checklist -->
+      <div class="card">
+        <div class="card-header">
+          <h3>✔ Learning Checklist</h3>
+          <span id="progress">0/0 DONE</span>
+        </div>
+
+        <div class="task-input">
+          <input id="taskInput" placeholder="Add a new task..."
+                 onkeypress="if(event.key==='Enter') addTask()">
+          <button onclick="addTask()">+</button>
+        </div>
+
+        <ul id="taskList" class="task-list"></ul>
+      </div>
+
+      <!-- Inspiration Gallery -->
+      <div class="card">
+        <div class="card-header">
+          <h3>🎨 Inspiration Gallery</h3>
+          <label class="upload-btn">
+            Upload
+            <input type="file" multiple hidden accept="image/*"
+                   onchange="uploadImages(event)">
+          </label>
+        </div>
+
+        <div class="gallery" id="gallery">
+          <label class="add-more">
+            +
+            <input type="file" multiple hidden accept="image/*"
+                   onchange="uploadImages(event)">
+          </label>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
